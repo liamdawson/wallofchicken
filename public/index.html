@@ -27,15 +27,15 @@
     <a class="github-button" href="https://github.com/damienadermann/wallofchicken/fork" data-size="large" aria-label="Fork damienadermann/wallofchicken on GitHub">Fork</a>
     <div id="contents" class="loading">
       <noscript>
-        <p>Please enabled JS</p>
+        <p>Please enable JS</p>
       </noscript>
       <h1>
         <span class="chicken chicken1">🐔</span>
-        <span class="chicken chicken2">🐔</span>
+        <span class="chicken chicken2">⚛️</span>
         <span class="chicken chicken3">🐔</span>
         <span id="primary">Loading...</span>
         <span class="chicken chicken4">🐔</span>
-        <span class="chicken chicken5">🐔</span>
+        <span class="chicken chicken5">⚛️</span>
         <span class="chicken chicken6">🐔</span>
       </h1>
       <p id="backups"></p>
@@ -109,7 +109,7 @@
       function render(randomlySortedChickens) {
         primary.innerText = randomlySortedChickens.shift()
         backups.innerHTML = `
-        Backup: ${randomlySortedChickens.shift().bold()} 
+        Backup: ${randomlySortedChickens.shift().bold()}
         <br /> Backup Backup: ${randomlySortedChickens.shift().bold()}
         <br /> Backup Backup Backup: ${randomlySortedChickens.shift().bold()}
         <br /> Backup Backup Backup Backup: ${randomlySortedChickens.shift().bold()}

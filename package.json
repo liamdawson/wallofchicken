@@ -20,12 +20,12 @@
   },
   "homepage": "https://github.com/damienadermann/wallofchicken#readme",
   "devDependencies": {
-    "apollo-server-lambda": "^2.5.0",
+    "apollo-server-lambda": "^2.9.1",
     "bufferutil": "^4.0.1",
     "encoding": "^0.1.12",
-    "graphql": "^14.3.0",
-    "netlify-cli": "^2.11.18",
-    "netlify-lambda": "^1.4.7",
+    "graphql": "^14.5.4",
+    "netlify-cli": "^2.13.0",
+    "netlify-lambda": "^1.6.3",
     "seedrandom": "^3.0.3",
     "utf-8-validate": "^5.0.2"
   }

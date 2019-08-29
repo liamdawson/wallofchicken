@@ -14,29 +14,14 @@ function daysSinceEpoch(day) {
 }
 
 const potentialChickens = [
-  { id: "U0286USDZ", name: "riley" },
-  { id: "U027CLUME", name: "gstamp" },
-  { id: "U0A51Q7E2", name: "lucas" },
-  { id: "U02DERN4E", name: "khayman" },
-  { id: "U0274DF37", name: "asellitt" },
-  { id: "U0K8Z1KD1", name: "kelle" },
-  { id: "U44G2GD4M", name: "damien.adermann" },
-  { id: "UFM0UL2GG", name: "claire.grooby" },
-  { id: "U07271PS5", name: "prasanna.joshi" },
-  { id: "U0G1LM222", name: "stacey" },
-  { id: "U1SG7A284", name: "bakes" },
-  { id: "UDWHM1JTZ", name: "riana.ferreira" },
-  { id: "U029C4B5Z", name: "mario" },
-  { id: "U02PS4KKA", name: "bordo" },
-  { id: "UD8UGSBMZ", name: "ben.vilnis" },
-  { id: "U5G7D3MK7", name: "grant.tibbey" },
-  { id: "UDWR5TJLR", name: "ali.graham" },
-  { id: "UEAR25K88", name: "amanda.varella" },
-  { id: "U56LKECMR", name: "tanya.fonina" },
-  { id: "UF72FC073", name: "Viv" },
-  { id: "UGP1W254P", name: "jason.jun" },
-  { id: "UGWEUTNH5", name: "Izzy" },
-  { id: "U1ATMHP70", name: "travo"},
+  { id: "U0286USDZ", name: "Kieran" },
+  { id: "U027CLUME", name: "Glenn" },
+  { id: "U0A51Q7E2", name: "Karen" },
+  { id: "U02DERN4E", name: "Liam" },
+  { id: "U0274DF37", name: "Mac" },
+  { id: "U0K8Z1KD1", name: "Melissa" },
+  { id: "U44G2GD4M", name: "Usama" },
+  { id: "UFM0UL2GG", name: "Z" },
 ]
 
 function getChickens(day) {

@@ -1,27 +1,7 @@
 <html>
   <head>
-    <style>
-      h1, p {
-        padding-top: 4em;
-        width: 100%;
-        text-align: center;
-      }
-      @keyframes clockwise {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-      }
-
-      @keyframes counter-clockwise {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(-360deg); }
-      }
-      .chicken {
-        display: inline-block;
-      }
-      .loading {
-        display: none;
-      }
-    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <a class="github-button" href="https://github.com/damienadermann/wallofchicken/fork" data-size="large" aria-label="Fork damienadermann/wallofchicken on GitHub">Fork</a>
@@ -29,15 +9,10 @@
       <noscript>
         <p>Please enable JS</p>
       </noscript>
-      <h1>
-        <span class="chicken chicken1">🐔</span>
-        <span class="chicken chicken2">⚛️</span>
-        <span class="chicken chicken3">🐔</span>
-        <span id="primary">Loading...</span>
-        <span class="chicken chicken4">🐔</span>
-        <span class="chicken chicken5">⚛️</span>
-        <span class="chicken chicken6">🐔</span>
-      </h1>
+
+      <div id="atom"></div>
+
+      <h1>🐔⚛🐔 <span id="primary">Loading...</span> 🐔⚛🐔</h1>
       <p id="backups"></p>
       <p>
         <select class="day">
@@ -86,10 +61,6 @@
         contents.classList.remove("loading")
       }, 2000)
 
-      function lerp(start, end, t) {
-        return start * (1 - t) + end * t
-      }
-
       function setupDays() {
         const DAYS = [
           "MONDAY",
@@ -108,40 +79,45 @@
 
       function render(randomlySortedChickens) {
         primary.innerText = randomlySortedChickens.shift()
-        backups.innerHTML = `
-        Backup: ${randomlySortedChickens.shift().bold()}
-        <br /> Backup Backup: ${randomlySortedChickens.shift().bold()}
-        <br /> Backup Backup Backup: ${randomlySortedChickens.shift().bold()}
-        <br /> Backup Backup Backup Backup: ${randomlySortedChickens.shift().bold()}
-        `
+        backups.innerHTML = `<p>Buck-buck-backUPS</p>${[0, 1, 2, 3].map(_ => randomlySortedChickens.shift().bold()).join('<br>')}`;
+        
         contents.classList.remove("loading")
-
-        // Orbit
-        ;[].forEach.call(chickens, (chicken) => {
-          chicken.style.transformOrigin = "initial"
-          chicken.style.animation = "none"
-        })
-        const primaryRect = primary.getBoundingClientRect()
-        const centerPoint = primaryRect.x + (primaryRect.width / 2)
-        ;[].forEach.call(chickens, (chicken) => {
-          const chickenRect = chicken.getBoundingClientRect()
-          chicken.style.transformOrigin = (-1 * (chickenRect.x - centerPoint)) + "px"
-          chicken.style.animation = [
-            Math.random() > 0.5 ? "clockwise" : "counter-clockwise",
-            lerp(5, 10, Math.random())+ "s",
-            "linear",
-            lerp(2, 6, Math.random()) + "s", // delay
-            "infinite",
-          ].join(" ")
-        })
       }
-
+        
       function fail() {
         primary.innerText = "(╯°□°)╯︵ ┻━┻"
       }
 
       setupDays()
       run("TODAY")
+    </script>
+    <script>
+      var atom = document.getElementById('atom');
+
+      for (var i=0; i < 3; i++) {
+        var shell = document.createElement("div");
+        shell.classList = "shell";
+        shell.setAttribute("style", "transform: rotate(" + (120 * i) + "deg);");
+
+        var innerShell = document.createElement("div");
+        innerShell.classList = "inner-shell";
+
+        for (var j=0; j < 2; j++) {
+          var electron = document.createElement("span");
+          electron.classList = "electron";
+          electron.setAttribute("style", "animation-delay: -" + ((i + j) * 1) + "s;");
+
+          innerShell.appendChild(electron);
+        }
+
+        shell.appendChild(innerShell);
+        atom.appendChild(shell);
+      }
+
+      var symbol = document.createElement("span");
+      symbol.innerText = "⚛️";
+
+      atom.appendChild(symbol);
     </script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
